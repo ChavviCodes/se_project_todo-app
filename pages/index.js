@@ -5,12 +5,9 @@ import Todo from "../components/Todo.js";
 
 import FormValidator from "../components/FormValidator.js";
 
-console.log(initialTodos);
-console.log(validationConfig);
-
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
-const addTodoForm = addTodoPopup.querySelector(".popup__form");
+const addTodoForm = document.forms["add-todo-form"];
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 // const todoTemplate = document.querySelector("#todo-template"); to be removed
 const todosList = document.querySelector(".todos__list");
