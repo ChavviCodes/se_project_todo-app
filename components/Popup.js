@@ -1,9 +1,37 @@
 class Popup {
-  constructor(popupSelector) {
+  constructor({ popupSelector }) {
     this._popupElement = document.querySelector(popupSelector);
+    this._popupCloseBtn = this._popupElement.querySelector(".popup__close");
+    // this._handleEscapeClose = _handleEscapeClose();
   }
 
-  open() {}
+  _handleEscapeClose(evt) {
+    if (evt.key === "Escape") {
+     this.close();
+  }
+  }
+
+  open() {
+    this._popupElement.classList.add("popup_visible");
+    document.addEventListener("keyup", (evt) => {
+      this._handleEscapeClose(evt);
+    });
+  }
+
+  close() {
+    this._popupElement.classList.remove("popup_visible");
+    document.removeEventListener("keyup", (evt) => {
+      this._handleEscapeClose(evt);
+    });
+  }
+
+  setEventListeners() {
+    this._popupCloseBtn.addEventListener("click", () => {
+      this.close();
+    });
+    this._popupElement.addEventListener("mousedown", this.close)
+  }
+
 }
 
 export default Popup;
