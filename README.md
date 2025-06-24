@@ -28,4 +28,5 @@ Clean Code Practices: Naming conventions, method abstraction, and code readabili
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+- ADD LINK HERE:
+  https://chavvicodes.github.io/se_project_todo-app/
